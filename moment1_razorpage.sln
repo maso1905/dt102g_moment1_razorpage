@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "moment1_razorpage", "moment1_razorpage.csproj", "{614EE8F5-AE85-4B89-9AAE-0CFA790836FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "moment1_razorpage", "moment1_razorpage.csproj", "{614EE8F5-AE85-4B89-9AAE-0CFA790836FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -9,7 +9,21 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  color: #000;
+}
+
+ul.nav li a, ul.nav li a:visited {
+    color: #000 !important;
+}
+
+    ul.nav li a:hover, ul.nav li a:active {
+        background-color: #febd1b !important;
+        color: #000 !important;
+    }
+
+ul.nav li.active a {
+    background-color: #febd1b !important;
+    color: #000 !important;
 }
 
 .btn-primary {
@@ -18,8 +32,8 @@ a {
   border-color: #1861ac;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
+.nav-pills .nav-link .active, .nav-pills .show > .nav-link {
+  color: #000;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }

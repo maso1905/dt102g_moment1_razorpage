@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@{ var date = DateTime.Now; }
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -9,38 +11,72 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-m navbar-toggleable-m navbar-light bg-warning border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">moment1_razorpage</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
+                <div class="col-5 text-left">
+                    <a class="navbar-brand" asp-area="" asp-page="/Index">
+                        <img src="~/img/honeycomb.png" class="img-fluid" alt="Responsive image">
+                    </a>
+                </div>
+                <div class="d-none d-md-block col-6 text-right">
+                    <p>Today's date is @date.ToString("yyyy/MM/dd")</p>
+                </div>
+
+                <div class="col-7 text-right">
+                    <div class="pos-f-t">
+                        <div class="collapse" id="navbarToggleExternalContent" style="text-align:left!important;">
+                            <div class="navbar-dark bg-warning p-4 text-left" style="padding: 0!important;">
+                                <p>Today's date is @date.ToString("yyyy/MM/dd")</p>
+
+                                <ul class="nav text-right">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" asp-page="/Index">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" asp-page="/Razor">Razor</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" asp-page="/About">About</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <button class="d-md-none d-xl-none navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </nav>
+
     </header>
+
     <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        <div class="row">
+            <div class="d-none d-md-block col-2 text-center" style="border-right: 3px solid dimgrey;">
+                <ul class="nav flex-column">
+                    <li is-active-page asp-page="/Index" class="nav-item"><a asp-page="/Index" class="nav-link">Home</a></li>
+                    <li is-active-page asp-page="/Razor" class="nav-item"><a asp-page="/Razor" class="nav-link">Razor</a></li>
+                    <li is-active-page asp-page="/About" class="nav-item"><a asp-page="/About" class="nav-link">About</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-9">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>       
+            </div>
+        </div>   
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted text-center bg-warning">
         <div class="container">
-            &copy; 2021 - moment1_razorpage - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2021 Malin Söderlund - Contact me by <a href="mailto:maso1905@@student.miun.se">e-mail</a>
         </div>
     </footer>
 
+    <script src="~/js/main.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

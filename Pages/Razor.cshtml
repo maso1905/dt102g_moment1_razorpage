@@ -1,0 +1,53 @@
+﻿@page
+@model moment1_razorpage.Pages.RazorModel
+@{
+    ViewData["Title"] = "Razor";
+
+    var date = DateTime.Now;
+    string isItMonday;
+
+    if(date.DayOfWeek == DayOfWeek.Monday)
+    {
+        isItMonday = "Today is monday!";
+    }else
+    {
+        isItMonday = "Today is NOT monday..";
+    }
+
+    var courses = new List<string>();
+    courses.Add("DT003G Databasteknik");
+    courses.Add("DT057G Webbutveckling I");
+    courses.Add("DT084G Intro till programmering i JavaScript");
+    courses.Add("DT093G Webbutveckling II");
+    courses.Add("DT152G CMS");
+    courses.Add("DT162 JavaScriptbaserad Webbutveckling");
+    courses.Add("DT163 Bildbehandling för webb");
+    courses.Add("GD008G Typografi");
+    courses.Add("DT071G Programmering i C#.NET");
+    courses.Add("DT173 Webbutveckling III");
+    courses.Add("IK Projektledning");
+}
+
+<div class="text-left">
+
+
+    <h2>@ViewData["Title"]</h2>
+
+    <h3>Information</h3>
+
+    <h4>Date/time: </h4>
+    <p>@isItMonday</p>
+
+
+    <h4>Finished courses:</h4>
+
+    @foreach (string course in courses)
+    {
+        <ul>
+            <li>@course</li>
+        </ul>
+    }
+
+</div>
+
+
